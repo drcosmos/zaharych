@@ -4,3 +4,5 @@ chat.id
 logs/
 __pycache__/
 *.pyc
+inbox/
+reminders.json

@@ -58,6 +58,25 @@ Telegram ←→ daemon.py (long-polling + scheduler) ←→ pi --print --session
 | 21:30 | "Lights out" reminder | template |
 | You write | Live reply with full memory | LLM |
 
+## Images
+
+Send a photo or an image file (chart, screenshot) to the bot — it's saved to
+`inbox/`, passed into the agent's vision context, and auto-cleaned after 24
+hours. The caption counts as your message text, so you can ask a question
+right on the picture.
+
+## Language
+
+All scheduled texts, prompts and service replies live in locale files:
+
+```
+src/locales/en.py   # English (default in this repo)
+src/locales/ru.py   # Russian
+```
+
+Pick one with `ZAHARYCH_LANG=en|ru` in `.env`. Commands: `/ping`,
+`/remind HH:MM text` (`/напомни` in the ru locale), `/reminders`.
+
 ## Roadmap (phase 2+)
 
 - Google Calendar: read the day's meetings into the morning brief
